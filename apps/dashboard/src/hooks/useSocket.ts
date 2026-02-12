@@ -37,9 +37,6 @@ export function useSocket() {
   }, []);
 
   useEffect(() => {
-    // Sync initial connection state (in case socket connected before mount)
-    setConnected(socket.connected);
-
     function onConnect() {
       setConnected(true);
     }
