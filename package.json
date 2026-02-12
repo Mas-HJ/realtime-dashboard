@@ -1,0 +1,21 @@
+{
+  "name": "realtime-dashboard",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "apps/*"
+  ],
+  "scripts": {
+    "dev:api": "npm run dev -w apps/api",
+    "dev:dashboard": "npm run dev -w apps/dashboard",
+    "build:api": "npm run build -w apps/api",
+    "build:dashboard": "npm run build -w apps/dashboard",
+    "dev": "concurrently \"npm run dev:api\" \"npm run dev:dashboard\"",
+    "test": "npm run test:api && npm run test:dashboard",
+    "test:api": "npm test -w apps/api",
+    "test:dashboard": "npm test -w apps/dashboard"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  }
+}
